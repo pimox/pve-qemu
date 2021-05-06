@@ -21,8 +21,8 @@ ARCH ?= $(shell dpkg-architecture -qDEB_HOST_GNU_CPU)
 PACKAGE=pve-qemu-kvm
 destdir := $(CURDIR)/debian/$(PACKAGE)
 
-flagfile := $(destdir)/usr/share/kvm/recognized-CPUID-flags-x86_64
-machinefile := $(destdir)/usr/share/kvm/machine-versions-x86_64.json
+flagfile := $(destdir)/usr/share/kvm/recognized-CPUID-flags-aarch64
+machinefile := $(destdir)/usr/share/kvm/machine-versions-aarch64.json
 
 # default QEMU out-of-tree build directory is ./build
 BUILDDIR=build
@@ -45,7 +45,7 @@ ${BUILDDIR}/config.status: configure
 	--localstatedir=/var \
 	--prefix=/usr \
 	--sysconfdir=/etc \
-	--target-list=$(ARCH)-softmmu,aarch64-softmmu \
+	--target-list=$(ARCH)-softmmu \
 	--with-suffix="kvm" \
 	--with-pkgversion="${DEB_SOURCE}_${DEB_VERSION_UPSTREAM}" \
 	--audio-drv-list="alsa" \
@@ -138,8 +138,8 @@ install: build
 	rm -f $(destdir)/usr/lib/kvm/virtfs-proxy-helper
 
 	# CPU flags are static for QEMU version, allows avoiding more costly checks
-	$(destdir)/usr/bin/qemu-system-x86_64 -cpu help | ./debian/parse-cpu-flags.pl > $(flagfile)
-	$(destdir)/usr/bin/qemu-system-x86_64 -machine help | ./debian/parse-machines.pl > $(machinefile)
+	$(destdir)/usr/bin/qemu-system-aarch64 -cpu help | ./debian/parse-arm64-cpu-flags.pl > $(flagfile)
+	$(destdir)/usr/bin/qemu-system-aarch64 -machine help | ./debian/parse-arm64-machines.pl > $(machinefile)
 
 # Build architecture-independent files here.
 binary-indep: build install

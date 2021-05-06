@@ -1,3 +1,9 @@
+pve-qemu-kvm (5.2.0-6rpve1) pve; urgency=medium
+
+  * ARM tweaks
+
+ -- Tim <tim.j.wilkinson@gmail.com>  Wed, 05 May 2021 17:20:30 -0700
+
 pve-qemu-kvm (5.2.0-6) pve; urgency=medium
 
   * improve the alloc-track and Proxmox Backup Server special block driver when

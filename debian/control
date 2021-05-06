@@ -70,7 +70,7 @@ Conflicts: kvm,
            qemu-system-common,
            qemu-system-x86,
            qemu-utils,
-Provides: qemu-system-arm, qemu-system-x86, qemu-utils
+Provides: qemu-system-arm, qemu-utils
 Replaces: pve-kvm,
           pve-qemu-kvm-2.6.18,
           qemu-system-arm,
