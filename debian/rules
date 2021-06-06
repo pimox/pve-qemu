@@ -45,7 +45,7 @@ ${BUILDDIR}/config.status: configure
 	--localstatedir=/var \
 	--prefix=/usr \
 	--sysconfdir=/etc \
-	--target-list=$(ARCH)-softmmu \
+	--target-list=aarch64-softmmu,x86_64-softmmu \
 	--with-suffix="kvm" \
 	--with-pkgversion="${DEB_SOURCE}_${DEB_VERSION_UPSTREAM}" \
 	--audio-drv-list="alsa" \
