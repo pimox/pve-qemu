@@ -1,6 +1,6 @@
 pve-qemu-kvm (5.2.0-6rpve2) pve; urgency=medium
 
-  * Add 32-bit ARM
+  * Add x86 back
 
  -- Tim <tim.j.wilkinson@gmail.com>  Sat, 05 Jun 2021 19:23:14 -0700
 
