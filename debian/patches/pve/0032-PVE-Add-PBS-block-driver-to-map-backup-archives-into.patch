@@ -60,7 +60,7 @@ index 0000000000..78dad0dcc4
 +
 +typedef struct {
 +    ProxmoxRestoreHandle *conn;
-+    char aid;
++    int8_t aid;
 +    int64_t length;
 +
 +    char *repository;

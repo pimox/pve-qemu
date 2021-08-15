@@ -1,4 +1,4 @@
-usr/bin/qemu-system-x86_64 usr/bin/kvm
+usr/bin/qemu-system-aarch64 usr/bin/kvm
 
 # qemu-system-i386 and qemu-system-x86_64 provides the same hardware emulation
 usr/bin/qemu-system-x86_64 usr/bin/qemu-system-i386
